@@ -35,7 +35,7 @@ public class Principal {
         String temperaturaDeEntrada = entradaDeDados.next();
         temperaturaDeEntrada = temperaturaDeEntrada.toUpperCase();
         if (!temperaturaDeEntrada.equals("CELSIUS") && !temperaturaDeEntrada.equals("KELVIN") && !temperaturaDeEntrada.equals("FAHRENHEIT")) {
-            System.out.println("Temperatura de entrada informada inválida.");
+            System.out.println("Temperatura de entrada informada inválida. Por favor, digite uma unidade de temperatura válida (Kelvin, Celsius ou Fahrenheit).");
             throw new TemperaturaInvalidaException();
         }
 
@@ -45,7 +45,7 @@ public class Principal {
         String temperaturaDeSaida = entradaDeDados.next();
         temperaturaDeSaida = temperaturaDeSaida.toUpperCase();
         if (!temperaturaDeSaida.equals("CELSIUS") && !temperaturaDeSaida.equals("KELVIN") && !temperaturaDeSaida.equals("FAHRENHEIT")) {
-            System.out.println("Temperatura de saída informada inválida.");
+            System.out.println("Temperatura de saída informada inválida. Por favor, digite uma unidade de temperatura válida (Kelvin, Celsius ou Fahrenheit) e que seja diferente da temperatura de entrada.");
             throw new TemperaturaInvalidaException();
         }
 
@@ -141,9 +141,11 @@ public class Principal {
             throw new TemperaturaInvalidaException();
         }
 
+        System.out.println("|------------------------------------------------------------------------------------------------|");
         System.out.println("As temperaturas passadas foram " + temperaturasDeEntrada + " graus " + temperaturaDeEntrada + ".");
         System.out.println("As temperaturas transformadas foram " + temperaturasDeSaida + " graus " + temperaturaDeSaida + ".");
         System.out.println("A média das temperaturas passadas é " + somaTempEntrada/quantidadeDeTemperaturas + " graus " + temperaturaDeEntrada + ".");
         System.out.println("A média das temperaturas transformadas é " + somaTempSaida/quantidadeDeTemperaturas + " graus " + temperaturaDeSaida + ".");
+        System.out.println("|------------------------------------------------------------------------------------------------|");
     }
 }
